@@ -51,12 +51,12 @@
 		"vite-plugin-eslint": "^1.8.1"
 	},
 	"husky": {
-		"pre-commit": "npm run lint"
+		"pre-commit": "npm run lint-staged"
 	},
 	"lint-staged": {
 		"**/*.{js,jsx,tsx,ts,html,md}": [
 			"npm run lint",
-			"git add"
+			"git add ."
 		]
 	}
 }
