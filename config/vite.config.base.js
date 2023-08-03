@@ -6,25 +6,25 @@ import path from 'path';
 const variablePath = path.resolve(__dirname, '../src/variable.less');
 
 const viteBaseConfig = {
-	css: {
-		modules: {
-			generateScopedName: '[name]__[local]___[hash:base64:5]',
-		},
-		preprocessorOptions: {
-			less: {
-				additionalData: `@import "${variablePath}";`,
-			},
-		},
-		postcss: {
-			plugins: [autoprefixer()],
-		},
-	},
-	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.css'],
-		alias: {
-			'@': path.resolve(__dirname, '../src'),
-		},
-	},
-	plugins: [react(), viteEslint()],
+  css: {
+    modules: {
+      generateScopedName: '[name]__[local]___[hash:base64:5]',
+    },
+    preprocessorOptions: {
+      less: {
+        additionalData: `@import "${variablePath}";`,
+      },
+    },
+    postcss: {
+      plugins: [autoprefixer()],
+    },
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.css'],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    },
+  },
+  plugins: [react(), viteEslint()],
 };
 export default viteBaseConfig;
