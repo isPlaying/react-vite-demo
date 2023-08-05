@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react';
 import autoprefixer from 'autoprefixer';
 import viteEslint from 'vite-plugin-eslint';
+import { createHtmlPlugin } from 'vite-plugin-html';
 import path from 'path';
 
 const variablePath = path.resolve(__dirname, '../src/variable.less');
@@ -25,6 +26,13 @@ const viteBaseConfig = {
       '@': path.resolve(__dirname, '../src'),
     },
   },
-  plugins: [react(), viteEslint()],
+  plugins: [
+    react(),
+    viteEslint(),
+    createHtmlPlugin({
+      entry: 'src/index.tsx',
+      minify: true,
+    }),
+  ],
 };
 export default viteBaseConfig;
