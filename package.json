@@ -48,7 +48,8 @@
     "terser": "^5.19.2",
     "vite": "^4.4.8",
     "vite-plugin-cdn-import": "^0.3.5",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-html": "^3.2.0"
   },
   "husky": {
     "pre-commit": "npm run lint-staged"

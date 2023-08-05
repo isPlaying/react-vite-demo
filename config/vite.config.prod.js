@@ -1,4 +1,5 @@
 import importToCDN from 'vite-plugin-cdn-import';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 const viteProdConfig = {
   build: {
@@ -25,6 +26,9 @@ const viteProdConfig = {
           path: 'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
         },
       ],
+    }),
+    createHtmlPlugin({
+      minify: true,
     }),
   ],
 };
